@@ -33,15 +33,18 @@
     <script>
       const params = new URLSearchParams(window.location.search);
       const videoId = params.get("videoId") || "";
-      const disableTouch = params.get("disableTouch") || false;
       const currentTime = parseFloat(params.get("currentTime") || "0");
       const idPlayer = params.get("idPlayer") || "player";
-      const controls = params.get("controls") || true;
+      const controls = params.get("controls") === "true" || params.get("controls") === true;
+      const disableTouch = params.get("disableTouch") === "true" || params.get("disableTouch") === true;
 
-      if (disableTouch) {
-        document.querySelector(".youtube-container").style.pointerEvents = "none";
-      } else {
-        document.querySelector(".youtube-container").style.pointerEvents = 'auto'
+      const container = document.querySelector(".youtube-container");
+      if (container) {
+        if (disableTouch) {
+          container.style.pointerEvents = "none";
+        } else {
+          container.style.pointerEvents = "auto";
+        }
       }
 
       var tag = document.createElement("script");
