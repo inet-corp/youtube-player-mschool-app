@@ -33,16 +33,16 @@
     <script>
       const params = new URLSearchParams(window.location.search);
       const videoId = params.get("videoId") || "";
-      const disableTouch = params.get("disableTouch") || "false";
+      const disableTouch = params.get("disableTouch") || false;
       const currentTime = parseFloat(params.get("currentTime") || "0");
       const idPlayer = params.get("idPlayer") || "player";
-      const controls = params.get("controls") || "true";
+      const controls = params.get("controls") || true;
 
-      // if (disableTouch) {
-      //   document.querySelector(".youtube-container").style.pointerEvents = "none";
-      // } else {
-      //   document.querySelector(".youtube-container").style.pointerEvents = 'auto'
-      // }
+      if (disableTouch) {
+        document.querySelector(".youtube-container").style.pointerEvents = "none";
+      } else {
+        document.querySelector(".youtube-container").style.pointerEvents = 'auto'
+      }
 
       var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
