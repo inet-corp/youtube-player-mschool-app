@@ -33,7 +33,7 @@
     <script>
       const params = new URLSearchParams(window.location.search);
       const videoId = params.get("videoId") || "";
-      const disableTouch = params.get("disableTouch") === "false";
+      const disableTouch = params.get("disableTouch") || "false";
       const currentTime = parseFloat(params.get("currentTime") || "0");
       const idPlayer = params.get("idPlayer") || "player";
 
@@ -106,4 +106,5 @@
     </script>
   </body>
 </html>
+
 
