@@ -40,6 +40,8 @@
 
       if (disableTouch) {
         document.querySelector(".youtube-container").style.pointerEvents = "none";
+      } else {
+        document.querySelector(".youtube-container").style.pointerEvents = 'auto'
       }
 
       var tag = document.createElement("script");
