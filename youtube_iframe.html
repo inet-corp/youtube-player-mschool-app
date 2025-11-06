@@ -36,10 +36,11 @@
       const disableTouch = params.get("disableTouch") || "false";
       const currentTime = parseFloat(params.get("currentTime") || "0");
       const idPlayer = params.get("idPlayer") || "player";
+      const controls = params.get("controls") || "true";
 
-      // if (disableTouch) {
-      //   document.querySelector(".youtube-container").style.pointerEvents = "none";
-      // }
+      if (disableTouch) {
+        document.querySelector(".youtube-container").style.pointerEvents = "none";
+      }
 
       var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
@@ -59,7 +60,7 @@
             rel: 0,
             playsinline: 1,
             autoplay: 1,
-            controls: 0,
+            controls: controls ? 1 : 0,
             origin: "https://www.youtube-nocookie.com"
           },
           events: {
