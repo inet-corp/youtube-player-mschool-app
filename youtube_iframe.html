@@ -37,9 +37,9 @@
       const currentTime = parseFloat(params.get("currentTime") || "0");
       const idPlayer = params.get("idPlayer") || "player";
 
-      if (disableTouch) {
-        document.querySelector(".youtube-container").style.pointerEvents = "none";
-      }
+      // if (disableTouch) {
+      //   document.querySelector(".youtube-container").style.pointerEvents = "none";
+      // }
 
       var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
