@@ -38,11 +38,11 @@
       const idPlayer = params.get("idPlayer") || "player";
       const controls = params.get("controls") || "true";
 
-      if (disableTouch) {
-        document.querySelector(".youtube-container").style.pointerEvents = "none";
-      } else {
-        document.querySelector(".youtube-container").style.pointerEvents = 'auto'
-      }
+      // if (disableTouch) {
+      //   document.querySelector(".youtube-container").style.pointerEvents = "none";
+      // } else {
+      //   document.querySelector(".youtube-container").style.pointerEvents = 'auto'
+      // }
 
       var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
